@@ -57,7 +57,7 @@ h2{font-size:18px;margin:22px 2px 10px}.tabs{display:grid;grid-template-columns:
 </main>
 <script>
 const $=id=>document.getElementById(id);
-const initial=()=>({hay:0,needles:0,total:0,farm:0,worker:0,machine:0,factory:0,research:0,prestige:0,metal:false,log:"ゲーム開始！ まずは干し草畑を建設しよう。",last:Date.now()});
+const initial=()=>({hay:50,needles:0,total:0,farm:0,worker:0,machine:0,factory:0,research:0,prestige:0,metal:false,log:"ゲーム開始！ まずは干し草畑を建設しよう。",last:Date.now()});
 let s=initial();
 try{const saved=JSON.parse(localStorage.getItem("hayEmpireSave"));if(saved)s={...s,...saved}}catch(e){}
 function fmt(n){if(!Number.isFinite(n))return "∞";if(n>=1e15)return n.toExponential(2);if(n>=1e9)return (n/1e9).toFixed(2)+"B";if(n>=1e6)return (n/1e6).toFixed(2)+"M";if(n>=1e3)return (n/1e3).toFixed(1)+"K";return n.toFixed(n<10&&n%1!==0?1:0)}
